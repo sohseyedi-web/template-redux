@@ -1,16 +1,19 @@
-import { EXAM_TYPE } from "../action/actionType";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  exams: [],
+  example: [],
 };
 
-export const examReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case EXAM_TYPE:
-      return {
-        ...state,
-      };
-    default:
-      return state;
-  }
-};
+const examReducer = createSlice({
+  name: "example",
+  initialState,
+  reducers: {
+    examFunc:(state,action)=>{
+      return state
+    }
+  },
+});
+
+export const {examFunc} = examReducer.actions;
+
+export default examReducer.reducer;
